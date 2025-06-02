@@ -37,8 +37,9 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ghcr.io/yuliiakzlv/zadanie2:latest
-          cache-from: type=registry,ref=docker.io/${{ secrets.DOCKERHUB_USERNAME }}/weather-cache:latest
-          cache-to: type=registry,ref=docker.io/${{ secrets.DOCKERHUB_USERNAME }}/weather-cache:latest,mode=max
+          cache-from: type=registry,ref=docker.io/julcia/weather-cache:latest
+          cache-to: type=registry,ref=docker.io/julcia/weather-cache:latest,mode=max
+
 
       - name: Trivy scan
         uses: aquasecurity/trivy-action@master
